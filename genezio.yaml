@@ -1,0 +1,28 @@
+backend:
+    cloudProvider: genezio
+    language:
+        name: js
+        packageManager: npm
+    path: ./server/
+    scripts:
+        deploy:
+            - npm install
+        local:
+            - npm install
+frontend:
+    path: ./client/
+    publish: dist
+    scripts:
+        build:
+            - npm run install-prod-sdk
+            - npm install
+            - npm run build
+        start:
+            - npm install
+            - npm run dev
+    sdk:
+        language: js
+    subdomain: chatgpt-getting-started-3
+name: chatgpt-getting-started-3
+region: us-east-1
+yamlVersion: 2
